@@ -12,177 +12,315 @@ export default function Home() {
   const [infoModal, setInfoModal] = useState(false);
 
   return (
-    <main className="w-full">
+    <main className="w-full overflow-x-hidden scroll-smooth">
 
-      {/* HERO SECTION */}
-      <section className="relative w-full h-screen">
+{/* HERO SECTION */}
+<section className="relative w-full min-h-screen">
 
-        {/* Background Image */}
+  {/* Background Image */}
+  <Image
+    src="/Background.png"
+    alt="Banner"
+    fill
+    priority
+    className="object-cover"
+  />
+
+  {/* Warm overlay */}
+  <div className="absolute inset-0 "></div>
+
+  {/* Navbar */}
+  <header className="absolute top-0 left-0 w-full z-20 h-28">
+    <div className="max-w-8xl mx-auto flex items-center justify-between px-6 md:px-44 h-full">
+
+      {/* Logo */}
+      <div className="flex items-center">
         <Image
-          src="/Background.png"
-          alt="Banner"
-          fill
+          src="/logo4.png"
+          alt="logo"
+          width={180}
+          height={180}
           priority
-          className="object-cover"
+        />
+      </div>
+
+      {/* Desktop Navbar */}
+      <nav className="hidden md:flex">
+  <ul className="flex gap-10 text-white font-serif text-lg tracking-wide">
+
+    <li>
+      <a href="#" className="hover:text-[#b39b6d] transition">
+        Home
+      </a>
+    </li>
+     <li>
+    <a href="#about" onClick={() => setMenuOpen(false)} className="hover:text-[#b39b6d]">
+      About
+    </a>
+  </li>
+
+    <li>
+      <a href="#books" className="hover:text-[#b39b6d] transition">
+        Books
+      </a>
+    </li>
+
+    <li>
+      <a href="#authors" className="hover:text-[#b39b6d] transition">
+        Authors
+      </a>
+    </li>
+
+    <li>
+      <a href="#contact" className="hover:text-[#b39b6d] transition">
+        Contact
+      </a>
+    </li>
+
+  </ul>
+</nav>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden flex flex-col gap-1"
+        onClick={() => setMenuOpen(true)}
+      >
+        <span className="w-6 h-0.5 bg-white"></span>
+        <span className="w-6 h-0.5 bg-white"></span>
+        <span className="w-6 h-0.5 bg-white"></span>
+      </button>
+
+    </div>
+  </header>
+
+
+{/* Mobile Menu */}
+{menuOpen && (
+  <div className="fixed inset-0 bg-black/95 z-30 flex flex-col items-center justify-center">
+
+    <button
+      className="absolute top-6 right-6 text-white text-3xl"
+      onClick={() => setMenuOpen(false)}
+    >
+      ✕
+    </button>
+
+    <ul className="text-white text-3xl font-serif space-y-10 text-center">
+
+      <li>
+        <a
+          href="#"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-[#b39b6d] transition"
+        >
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#about"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-[#b39b6d] transition"
+        >
+          About
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#books"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-[#b39b6d] transition"
+        >
+          Books
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#authors"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-[#b39b6d] transition"
+        >
+          Authors
+        </a>
+      </li>
+
+      <li>
+        <a
+          href="#contact"
+          onClick={() => setMenuOpen(false)}
+          className="hover:text-[#b39b6d] transition"
+        >
+          Contact
+        </a>
+      </li>
+
+    </ul>
+
+  </div>
+)}
+
+
+  {/* Hero Content */}
+  <div className="absolute inset-0 flex items-center justify-start px-6 md:px-12 lg:px-20">
+
+    <div className="max-w-xl ml-4 md:ml-16 lg:ml-28">
+
+      <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl leading-tight mb-6">
+        Where Stories Grow <br /> and Ideas Flourish
+      </h1>
+
+      <p className="text-gray-200 text-base sm:text-lg md:text-xl mb-10 leading-relaxed">
+        Growing Pages Publication helps writers transform ideas into
+        impactful books and connects readers with inspiring stories
+        from around the world.
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-5">
+
+        <button className="bg-[#b39b6d] text-white px-7 py-3 rounded-md font-medium transition hover:bg-[#9f8a60]">
+          Explore Books
+        </button>
+
+        <button className="border border-white text-white px-7 py-3 rounded-md font-medium transition hover:bg-white hover:text-black">
+          Submit Your Manuscript
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+{/* ABOUT PUBLISHER SECTION */}
+<section id="about" className="py-20 md:py-28 bg-[#f5f3ef]">
+
+  <div className="max-w-7xl mx-auto px-6 md:px-10">
+
+    {/* Section Heading */}
+    <div className="text-center mb-16">
+      <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[#2c2c2c]">
+        About the Publisher
+      </h2>
+    </div>
+
+    {/* Content Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+
+      {/* Publisher Image */}
+      <div
+        className="relative group cursor-pointer"
+        onClick={() => setPublisherModal(true)}
+      >
+        <Image
+          src="/publisher.jpg"
+          alt="Publisher"
+          width={600}
+          height={600}
+          className="rounded-xl shadow-lg w-full h-auto object-cover transition duration-500 group-hover:scale-105"
         />
 
-        {/* Navbar */}
-        <header className="absolute top-0 left-0 w-full z-20">
-          <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-4">
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/30 rounded-xl opacity-0 group-hover:opacity-100 transition"></div>
 
-            {/* Logo */}
-            <div className="text-xl md:text-2xl font-bold text-white">
-              LOGO
-            </div>
-
-            {/* Desktop Navbar */}
-            <nav className="hidden md:block">
-              <ul className="flex gap-8 text-white font-medium">
-                <li className="cursor-pointer hover:opacity-70">Home</li>
-                <li className="cursor-pointer hover:opacity-70">Books</li>
-                <li className="cursor-pointer hover:opacity-70">Authors</li>
-                <li className="cursor-pointer hover:opacity-70">Contact</li>
-              </ul>
-            </nav>
-
-            {/* Hamburger */}
-            <button
-              className="md:hidden flex flex-col gap-1"
-              onClick={() => setMenuOpen(true)}
-            >
-              <span className="w-6 h-0.5 bg-white"></span>
-              <span className="w-6 h-0.5 bg-white"></span>
-              <span className="w-6 h-0.5 bg-white"></span>
-            </button>
-
-          </div>
-        </header>
-
-        {/* Mobile Menu */}
-        {menuOpen && (
-          <div className="fixed inset-0 bg-black z-30 flex flex-col items-center justify-center">
-
-            <button
-              className="absolute top-6 right-6 text-white text-3xl"
-              onClick={() => setMenuOpen(false)}
-            >
-              ✕
-            </button>
-
-            <ul className="text-white text-2xl space-y-8 text-center">
-              <li className="cursor-pointer">Home</li>
-              <li className="cursor-pointer">Books</li>
-              <li className="cursor-pointer">Authors</li>
-              <li className="cursor-pointer">Contact</li>
-            </ul>
-
-          </div>
-        )}
-
-        {/* Hero Content */}
-        <div className="absolute inset-0 flex items-center justify-start px-6 md:px-12 lg:px-20">
-          <div className="max-w-xl">
-            <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold mb-4">
-              Welcome to Our Publishing House
-            </h1>
-
-            <p className="text-white text-base md:text-lg">
-              Discover books, authors, and ideas that shape the world.
-            </p>
+        {/* Play Button */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="bg-[#b39b6d] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition text-xl">
+            ▶
           </div>
         </div>
+      </div>
 
-      </section>
+      {/* Text */}
+      <div className="max-w-xl">
 
-      {/* ABOUT PUBLISHER SECTION */}
-      <section className="py-20 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 grid md:grid-cols-2 gap-10 items-center">
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+          Growing Pages Publication is dedicated to nurturing powerful ideas
+          and transforming them into meaningful books. We collaborate with
+          authors, educators, and storytellers to bring inspiring ideas to
+          readers across the world.
+        </p>
 
-          {/* Publisher Image */}
-          <div
-            className="cursor-pointer"
-            onClick={() => setPublisherModal(true)}
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          Learn more about our{" "}
+          <span
+            className="text-[#b39b6d] cursor-pointer underline font-medium hover:text-[#2c2c2c] transition"
+            onClick={() => setInfoModal(true)}
           >
-            <Image
-              src="/publisher.jpg"
-              alt="Publisher"
-              width={500}
-              height={500}
-              className="rounded-lg shadow-lg hover:scale-105 transition"
-            />
-          </div>
+            vision and mission
+          </span>{" "}
+          and how we help writers turn their ideas into impactful publications.
+        </p>
 
-          {/* Text */}
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#212121]">
-              About the Publisher
-            </h2>
+      </div>
 
-            <p className="text-gray-700 text-lg leading-relaxed">
-              Our publishing house has been dedicated to bringing meaningful
-              stories and educational resources to readers around the world.
-              Learn more about our{" "}
-              <span
-                className="text-blue-600 cursor-pointer underline"
-                onClick={() => setInfoModal(true)}
-              >
-                vision and mission
-              </span>{" "}
-              and how we support authors and educators.
-            </p>
-          </div>
+    </div>
 
-        </div>
-      </section>
+  </div>
 
-      {/* Publisher Modal */}
-      {publisherModal && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="bg-white p-8 max-w-lg rounded-lg relative">
+</section>
+{/* Publisher Video Modal */}
+{publisherModal && (
+  <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4">
 
-            <button
-              className="absolute top-3 right-4 text-2xl"
-              onClick={() => setPublisherModal(false)}
-            >
-              ✕
-            </button>
+    <div className="relative w-full max-w-4xl">
 
-            <h3 className="text-2xl font-bold mb-4">Publisher</h3>
+      {/* Close button */}
+      <button
+        className="absolute -top-10 right-0 text-white text-3xl"
+        onClick={() => setPublisherModal(false)}
+      >
+        ✕
+      </button>
 
-            <p className="text-gray-700">
-              Add information about the publisher here. You can include
-              biography, achievements, history of the publishing house,
-              and more details.
-            </p>
+      {/* Video */}
+      <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow-xl">
+        <iframe
+          className="absolute top-0 left-0 w-full h-full"
+          src="https://www.youtube.com/embed/L623vxbbp_w"
+          title="Publisher Video"
+          allowFullScreen
+        ></iframe>
+      </div>
 
-          </div>
-        </div>
-      )}
+    </div>
+
+  </div>
+)}
 
       {/* Vision Modal */}
-      {infoModal && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-          <div className="bg-white p-8 max-w-lg rounded-lg relative">
+{infoModal && (
+  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4">
 
-            <button
-              className="absolute top-3 right-4 text-2xl"
-              onClick={() => setInfoModal(false)}
-            >
-              ✕
-            </button>
+    <div className="bg-white p-6 md:p-8 max-w-lg w-full rounded-lg shadow-lg relative">
 
-            <h3 className="text-2xl font-bold mb-4">
-              Vision & Mission
-            </h3>
+      <button
+        className="absolute top-3 right-4 text-2xl"
+        onClick={() => setInfoModal(false)}
+      >
+        ✕
+      </button>
 
-            <p className="text-gray-700">
-              Here you can add details about your publishing philosophy,
-              mission, editorial values, and long-term goals.
-            </p>
+      <h3 className="font-serif text-2xl font-semibold mb-4 text-[#2c2c2c]">
+        Vision & Mission
+      </h3>
 
-          </div>
-        </div>
-      )}
+      <p className="text-gray-700 leading-relaxed">
+        At Growing Pages Publication, our vision is to cultivate ideas,
+        empower writers, and create books that inspire, educate, and
+        connect readers around the world. We strive to provide a platform
+        where stories grow and knowledge flourishes.
+      </p>
+
+    </div>
+
+  </div>
+)}
+
       <FeaturedBooks />
       <AuthorTestimonials />
       <ContactSection />

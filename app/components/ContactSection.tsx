@@ -1,47 +1,64 @@
 "use client";
 
-import { FaInstagram, FaLinkedinIn, FaFacebookF, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaLinkedinIn,
+  FaFacebookF,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="contact" className="py-24 bg-[#f5f3ef]">
+      <div className="max-w-6xl mx-auto px-6">
 
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#212121] mb-4">
-            Contact Us
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-[#2c2c2c] mb-4">
+            Contact Growing Pages
           </h2>
-          <p className="text-gray-600 max-w-xl mx-auto">
-            We'd love to hear from authors, readers, and partners. Reach out to us using the details below or send a message.
+
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+            Connect with our publishing team. Whether you're an author,
+            reader, or partner, we’re always happy to hear from you.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-14 items-start">
+        <div className="grid lg:grid-cols-2 gap-14 items-start">
 
-          {/* LEFT SIDE CONTACT INFO */}
+          {/* CONTACT DETAILS */}
           <div className="space-y-8">
 
             {/* Email */}
-            <div className="flex items-start gap-4">
-              <div className="bg-[#b39b6d] text-white p-3 rounded-full">
+            <div className="flex items-start gap-5 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="bg-[#b39b6d] text-white p-4 rounded-full text-lg">
                 <FaEnvelope />
               </div>
+
               <div>
-                <h4 className="font-semibold text-lg">Email</h4>
-                <p className="text-gray-600">
+                <h4 className="font-serif text-lg font-semibold text-[#2c2c2c]">
+                  Email
+                </h4>
+
+                <p className="text-gray-600 break-all">
                   contact@growingpagespublication.com
                 </p>
               </div>
             </div>
 
             {/* Phone */}
-            <div className="flex items-start gap-4">
-              <div className="bg-[#b39b6d] text-white p-3 rounded-full">
+            <div className="flex items-start gap-5 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="bg-[#b39b6d] text-white p-4 rounded-full text-lg">
                 <FaPhoneAlt />
               </div>
+
               <div>
-                <h4 className="font-semibold text-lg">Phone</h4>
+                <h4 className="font-serif text-lg font-semibold text-[#2c2c2c]">
+                  Phone
+                </h4>
+
                 <p className="text-gray-600">
                   +91-XXXXXXXXXX
                 </p>
@@ -49,84 +66,100 @@ export default function ContactSection() {
             </div>
 
             {/* Address */}
-            <div className="flex items-start gap-4">
-              <div className="bg-[#b39b6d] text-white p-3 rounded-full">
+            <div className="flex items-start gap-5 bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition">
+              <div className="bg-[#b39b6d] text-white p-4 rounded-full text-lg">
                 <FaMapMarkerAlt />
               </div>
+
               <div>
-                <h4 className="font-semibold text-lg">Address</h4>
+                <h4 className="font-serif text-lg font-semibold text-[#2c2c2c]">
+                  Address
+                </h4>
+
                 <p className="text-gray-600">
                   Bavaria, Germany
                 </p>
               </div>
             </div>
 
-            {/* Social Icons */}
+            {/* Social Media */}
             <div className="pt-6">
-              <h4 className="font-semibold text-lg mb-4">
+              <h4 className="font-serif text-lg font-semibold text-[#2c2c2c] mb-4">
                 Follow Us
               </h4>
 
               <div className="flex gap-4">
 
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#b39b6d] text-white hover:scale-110 transition cursor-pointer">
+                <a
+                  href="#"
+                  className="w-11 h-11 flex items-center justify-center rounded-full bg-[#b39b6d] text-white  transition"
+                >
                   <FaInstagram />
-                </div>
+                </a>
 
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#b39b6d] text-white hover:scale-110 transition cursor-pointer">
+                <a
+                  href="#"
+                  className="w-11 h-11 flex items-center justify-center rounded-full bg-[#b39b6d] text-white  transition"
+                >
                   <FaLinkedinIn />
-                </div>
+                </a>
 
-                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#b39b6d] text-white hover:scale-110 transition cursor-pointer">
+                <a
+                  href="#"
+                  className="w-11 h-11 flex items-center justify-center rounded-full bg-[#b39b6d] text-white  transition"
+                >
                   <FaFacebookF />
-                </div>
+                </a>
 
               </div>
             </div>
 
           </div>
 
-          {/* RIGHT SIDE CONTACT FORM */}
-          <div className="bg-white p-8 rounded-xl shadow-lg">
+          {/* CONTACT FORM */}
+          <div className="bg-white p-8 md:p-10 rounded-lg shadow-md">
 
             <form className="space-y-6">
 
               <div>
-                <label className="block mb-2 text-sm font-medium">
+                <label className="block mb-2 text-sm  text-[#2c2c2c] font-semibold font-serif">
                   Name
                 </label>
+
                 <input
                   type="text"
-                  className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#b39b6d]"
                   placeholder="Your Name"
+                  className="w-full border text-black border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#b39b6d] font-serif"
                 />
               </div>
 
               <div>
-                <label className="block mb-2 text-sm font-medium">
+                <label className="block mb-2 text-sm  text-[#2c2c2c] font-semibold font-serif">
                   Email
                 </label>
+
                 <input
                   type="email"
-                  className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#b39b6d]"
                   placeholder="Your Email"
+                  className="w-full border text-black border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#b39b6d] font-serif"
                 />
               </div>
 
               <div>
-                <label className="block mb-2 text-sm font-medium">
+                <label className="block mb-2 text-sm  text-[#2c2c2c] font-semibold font-serif">
                   Message
                 </label>
+
                 <textarea
                   rows={4}
-                  className="w-full border border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#b39b6d]"
                   placeholder="Write your message..."
+                  className="w-full border text-black border-gray-300 rounded-md px-4 py-3 focus:outline-none focus:border-[#b39b6d] font-serif"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#b39b6d] text-white py-3 rounded-md font-medium hover:bg-[#a28c5e] transition"
+                className="w-full bg-[#b39b6d]  text-black  py-3 rounded-md   transition font-semibold font-serif"
               >
                 Send Message
               </button>
