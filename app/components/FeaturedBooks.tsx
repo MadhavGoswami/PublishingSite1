@@ -46,7 +46,8 @@ const categories = {
 };
 
 export default function FeaturedBooks() {
-  const [activeCategory, setActiveCategory] = useState("Fiction");
+  type Category = keyof typeof categories;
+  const [activeCategory, setActiveCategory] = useState<Category>("Fiction");
 
   return (
     <section id="books" className="py-28 bg-[#f5f3ef]">
@@ -69,7 +70,7 @@ export default function FeaturedBooks() {
       {/* CATEGORY BUTTONS */}
 <div className="flex flex-wrap justify-center gap-4 mb-16 font-serif  ">
 
-  {Object.keys(categories).map((category) => (
+  {(Object.keys(categories) as Category[]).map((category) => (
     <button
       key={category}
       onClick={() => setActiveCategory(category)}
