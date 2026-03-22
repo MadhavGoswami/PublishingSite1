@@ -12,7 +12,7 @@ import {
 export default function ContactSection() {
   return (
     <section id="contact" className="py-24 bg-[#f5f3ef]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10">
 
         {/* Title */}
         <div className="text-center mb-16">
@@ -20,7 +20,7 @@ export default function ContactSection() {
             Contact Growing Pages
           </h2>
 
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-600 max-w-2xl mx-auto text-xl ">
             Connect with our publishing team. Whether you're an author,
             reader, or partner, we’re always happy to hear from you.
           </p>
@@ -38,7 +38,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <h4 className="font-serif text-lg font-semibold text-[#2c2c2c]">
+                <h4 className="font-serif text-xl font-semibold text-[#2c2c2c]">
                   Email
                 </h4>
 
@@ -55,7 +55,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <h4 className="font-serif text-lg font-semibold text-[#2c2c2c]">
+                <h4 className="font-serif text-xl font-semibold text-[#2c2c2c]">
                   Phone
                 </h4>
 
@@ -72,7 +72,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <h4 className="font-serif text-lg font-semibold text-[#2c2c2c]">
+                <h4 className="font-serif text-xl font-semibold text-[#2c2c2c]">
                   Address
                 </h4>
 
@@ -83,7 +83,7 @@ export default function ContactSection() {
             </div>
 
             {/* Social Media */}
-            <div className="pt-6">
+            <div className="pt-13">
               <h4 className="font-serif text-lg font-semibold text-[#2c2c2c] mb-4">
                 Follow Us
               </h4>
@@ -122,7 +122,7 @@ export default function ContactSection() {
             <form className="space-y-6">
 
               <div>
-                <label className="block mb-2 text-sm  text-[#2c2c2c] font-semibold font-serif">
+                <label className="block mb-2 text-xl  text-[#2c2c2c] font-semibold font-serif">
                   Name
                 </label>
 
@@ -134,7 +134,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block mb-2 text-sm  text-[#2c2c2c] font-semibold font-serif">
+                <label className="block mb-2 text-xl  text-[#2c2c2c] font-semibold font-serif">
                   Email
                 </label>
 
@@ -146,7 +146,7 @@ export default function ContactSection() {
               </div>
 
               <div>
-                <label className="block mb-2 text-sm  text-[#2c2c2c] font-semibold font-serif">
+                <label className="block mb-2 text-xl  text-[#2c2c2c] font-semibold font-serif">
                   Message
                 </label>
 

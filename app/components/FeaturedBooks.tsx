@@ -60,7 +60,7 @@ export default function FeaturedBooks() {
             Featured Books
           </h2>
 
-          <p className="text-gray-600 text-base md:text-lg  max-w-xl mx-auto">
+          <p className="text-gray-600 text-base md:text-xl  max-w-xl mx-auto">
             Discover books from different genres carefully curated
             to inspire readers of all ages.
           </p>
@@ -74,7 +74,7 @@ export default function FeaturedBooks() {
     <button
       key={category}
       onClick={() => setActiveCategory(category)}
-      className={`w-48 text-center py-2 rounded-full font-medium transition
+      className={`w-48 text-center text-xl py-2 rounded-full font-medium transition
       
       ${
         activeCategory === category
@@ -88,39 +88,41 @@ export default function FeaturedBooks() {
 
 </div>
 
+     
         {/* PREMIUM CAROUSEL */}
-       <Swiper
-  key={activeCategory}
-  modules={[Autoplay, EffectCoverflow]}
-  effect="coverflow"
-  centeredSlides={true}
-  grabCursor={true}
-  slidesPerView={3}
-  loop={true}
-  className="!overflow-visible py-10"
+ <div className="max-w-[1090px] mx-auto">
+  <Swiper
+    key={activeCategory}
+    modules={[Autoplay, EffectCoverflow]}
+    effect="coverflow"
+    centeredSlides={true}
+    grabCursor={true}
+    slidesPerView={3}
+    loop={true}
+    className="!overflow-visible py-10"
 
-  coverflowEffect={{
-    rotate: 0,
-    stretch: 0,
-    depth: 200,
-    modifier: 2,
-    slideShadows: false,
-  }}
+    coverflowEffect={{
+      rotate: 0,
+      stretch: 0,
+      depth: 200,
+      modifier: 2,
+      slideShadows: false,
+    }}
 
-  autoplay={{
-    delay: 1200,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  }}
+    autoplay={{
+      delay: 1200,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    }}
 
-  speed={700}
+    speed={700}
 
-  breakpoints={{
-    320: { slidesPerView: 1 },
-    640: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-  }}
->
+    breakpoints={{
+      320: { slidesPerView: 1 },
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    }}
+  >
 
           {categories[activeCategory].map((book, index) => (
             <SwiperSlide key={index}>
@@ -158,6 +160,8 @@ export default function FeaturedBooks() {
           ))}
 
         </Swiper>
+  </div>
+        
 
       </div>
     </section>

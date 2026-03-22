@@ -29,14 +29,14 @@ const authors = [
 export default function AuthorTestimonials() {
   return (
     <section id="authors" className="py-24 bg-[#f5f3ef]">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10">
 
         {/* Section Title */}
         <div className="text-center mb-20">
-          <h2 className="font-serif text-3xl md:text-4xl text-[#2c2c2c] mb-4 font-semibold">
+          <h2 className="font-serif text-3xl md:text-4xl text-[#2c2c2c] font-semibold mb-4">
             Meet Our Authors
           </h2>
-          <p className="text-gray-600 text-base md:text-lg  max-w-xl mx-auto">
+          <p className="text-gray-600 text-base md:text-xl max-w-xl mx-auto">
             Passionate storytellers and literary experts who help shape
             meaningful books and inspiring reading experiences.
           </p>
@@ -51,64 +51,49 @@ export default function AuthorTestimonials() {
               }`}
             >
 
-            {/* IMAGE */}
-<div
-  className={`flex justify-center ${
-    author.reverse ? "md:justify-end" : "md:justify-start"
-  }`}
->
-  <div className="relative group w-52 h-52 rounded-full overflow-hidden shadow-lg">
-
-    <Image
-      src={author.image}
-      alt={author.name}
-      fill
-      className="object-cover transition duration-500 group-hover:scale-105"
-    />
-
-    {/* gold ring hover */}
-    <div className="absolute inset-0 rounded-full ring-0 group-hover:ring-2 ring-[#b39b6d] transition"></div>
-
-  </div>
-</div>
+              {/* IMAGE */}
+              <div
+                className={`flex justify-center ${author.reverse ? "md:justify-end" : "md:justify-start"}`}
+              >
+                <div className="relative group w-52 h-52 rounded-full overflow-hidden shadow-lg">
+                  <Image
+                    src={author.image}
+                    alt={author.name}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 rounded-full ring-0 group-hover:ring-2 ring-[#b39b6d] transition"></div>
+                </div>
+              </div>
 
               {/* TEXT */}
-              <div className="text-center md:text-left font-serif">
+              <div className="w-full md:w-full text-justify font-serif">
 
-                <h3 className="font-serif text-3xl text-[#2c2c2c] mb-2">
+                <h3 className="font-serif text-4xl md:text-4xl text-[#2c2c2c] mb-2 text-center md:text-left">
                   {author.name}
                 </h3>
 
-                <p className="text-sm text-gray-500 mb-4">
-                  <span className="text-[#b39b6d] font-medium">
-                    {author.role}
-                  </span>{" "}
-                  • {author.experience}
+                <p className="text-lg md:text-lg text-gray-500 mb-2 text-center md:text-left">
+                  <span className="text-[#b39b6d] font-medium">{author.role}</span> • {author.experience}
                 </p>
 
-                <p className="text-sm text-gray-500 mb-6">
-                  {author.email}
-                </p>
+                <p className="text-lg md:text-lg text-gray-500 mb-6 text-center md:text-left">{author.email}</p>
 
-                <p className="text-gray-600 leading-relaxed mb-8">
+                <p className="text-gray-700 text-xl leading-relaxed mb-8">
                   {author.description}
                 </p>
 
                 {/* SOCIAL ICONS */}
                 <div className="flex justify-center md:justify-start gap-4">
-
                   <div className="w-10 h-10 bg-[#b39b6d] text-white rounded-full flex items-center justify-center cursor-pointer transition hover:bg-[#9e8a60] hover:scale-105">
                     <FaFacebookF size={14} />
                   </div>
-
                   <div className="w-10 h-10 bg-[#b39b6d] text-white rounded-full flex items-center justify-center cursor-pointer transition hover:bg-[#9e8a60] hover:scale-105">
                     <FaInstagram size={14} />
                   </div>
-
                   <div className="w-10 h-10 bg-[#b39b6d] text-white rounded-full flex items-center justify-center cursor-pointer transition hover:bg-[#9e8a60] hover:scale-105">
                     <FaYoutube size={14} />
                   </div>
-
                 </div>
 
               </div>

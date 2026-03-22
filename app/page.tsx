@@ -173,9 +173,7 @@ export default function Home() {
       </h1>
 
       <p className="text-gray-200 text-base sm:text-lg md:text-xl mb-10 leading-relaxed">
-        Growing Pages Publication helps writers transform ideas into
-        impactful books and connects readers with inspiring stories
-        from around the world.
+       Growing Pages Publication helps writers turn ideas into impactful books and connects readers with inspiring stories.
       </p>
 
       {/* Buttons */}
@@ -229,95 +227,105 @@ export default function Home() {
 
         {/* Play Button */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="bg-[#b39b6d] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition text-xl">
+          <div className="bg-[#b39b6d] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition text-xl play-pulse blink-fast">
             ▶
           </div>
         </div>
       </div>
 
-      {/* Text */}
-      <div className="max-w-xl">
+     {/* Text */}
+<div className="w-full text-justify">
 
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
-          Growing Pages Publication is dedicated to nurturing powerful ideas
-          and transforming them into meaningful books. We collaborate with
-          authors, educators, and storytellers to bring inspiring ideas to
-          readers across the world.
-        </p>
+  <p className="text-gray-700 text-base md:text-xl leading-relaxed mb-6">
+    Growing Pages Publication is an independent publishing house dedicated to nurturing emerging writers and delivering meaningful literature to readers across India and globally. The company focuses on publishing fiction, non-fiction, academic resources, and children’s books that inspire creativity, learning, and cultural understanding.
+  </p>
 
-        <p className="text-gray-700 text-base md:text-lg leading-relaxed">
-          Learn more about our{" "}
-          <span
-            className="text-[#b39b6d] cursor-pointer underline font-medium hover:text-[#2c2c2c] transition"
-            onClick={() => setInfoModal(true)}
-          >
-            vision and mission
-          </span>{" "}
-          and how we help writers turn their ideas into impactful publications.
-        </p>
+  <p className="text-gray-700 text-base md:text-xl leading-relaxed">
+    Learn more about our{" "}
+    <span
+      className="text-[#b39b6d] cursor-pointer underline font-medium hover:text-[#2c2c2c] transition shine-text"
+      onClick={() => setInfoModal(true)}
+    >
+      vision and mission
+    </span>{" "}
+    and how we help writers turn their ideas into impactful publications.
+  </p>
 
-      </div>
+</div>
 
     </div>
 
   </div>
 
 </section>
-{/* Publisher Video Modal */}
-{publisherModal && (
-  <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4">
+  {/* Publisher Video Modal */}
+  {publisherModal && (
+    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 px-4">
 
-    <div className="relative w-full max-w-4xl">
+      <div className="relative w-full max-w-4xl">
 
-      {/* Close button */}
-      <button
-        className="absolute -top-10 right-0 text-white text-3xl"
-        onClick={() => setPublisherModal(false)}
-      >
-        ✕
-      </button>
+        {/* Close button */}
+        <button
+          className="absolute -top-10 right-0 text-white text-3xl"
+          onClick={() => setPublisherModal(false)}
+        >
+          ✕
+        </button>
 
-      {/* Video */}
-      <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow-xl">
-        <iframe
-          className="absolute top-0 left-0 w-full h-full"
-          src="https://www.youtube.com/embed/L623vxbbp_w"
-          title="Publisher Video"
-          allowFullScreen
-        ></iframe>
+        {/* Video */}
+        <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl shadow-xl">
+          <iframe
+            className="absolute top-0 left-0 w-full h-full"
+            src="https://www.youtube.com/embed/L623vxbbp_w"
+            title="Publisher Video"
+            allowFullScreen
+          ></iframe>
+        </div>
+
       </div>
 
     </div>
+  )}
 
-  </div>
-)}
-
-      {/* Vision Modal */}
+{/* Vision Modal */}
 {infoModal && (
-  <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 px-4">
+  <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 px-4 py-8">
 
-    <div className="bg-white p-6 md:p-8 max-w-lg w-full rounded-lg shadow-lg relative">
+    <div className="bg-white w-full max-w-xl rounded-2xl shadow-2xl p-6 md:p-10 relative fade-up">
 
+      {/* Close button */}
       <button
-        className="absolute top-3 right-4 text-2xl"
+        className="absolute top-4 right-5 text-2xl text-gray-500 hover:text-black transition"
         onClick={() => setInfoModal(false)}
       >
         ✕
       </button>
 
-      <h3 className="font-serif text-2xl font-semibold mb-4 text-[#2c2c2c]">
+      {/* Heading with Shine */}
+      <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-4 shine-text">
         Vision & Mission
       </h3>
 
-      <p className="text-gray-700 leading-relaxed">
-        At Growing Pages Publication, our vision is to cultivate ideas,
-        empower writers, and create books that inspire, educate, and
-        connect readers around the world. We strive to provide a platform
-        where stories grow and knowledge flourishes.
+      {/* Divider */}
+      <div className="w-12 h-[2px] bg-[#b39b6d] mb-6"></div>
+
+      {/* Content */}
+      <p className="text-gray-600 text-base md:text-xl leading-relaxed md:leading-loose tracking-[0.2px]">
+       To become a trusted platform for new and established authors while promoting diverse voices in literature.
+      <br/>  To empower writers and bring powerful stories, educational knowledge, and creative ideas to readers everywhere.
       </p>
 
-    </div>
+      {/* CTA */}
+      <div className="mt-8">
+        <button
+          onClick={() => setInfoModal(false)}
+          className="px-6 py-3 bg-[#b39b6d] text-white text-sm font-medium rounded-lg hover:bg-[#b39b6d] transition"
+        >
+          Close
+        </button>
+      </div>
 
+    </div>
   </div>
 )}
 
