@@ -168,26 +168,27 @@ export default function Home() {
 
     <div className="max-w-xl ml-4 md:ml-16 lg:ml-28">
 
-      <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl leading-tight mb-6">
-        Where Stories Grow <br /> and Ideas Flourish
-      </h1>
+      <p className="uppercase tracking-[3px] text-xs text-[#b39b6d] mb-4 font-medium">
+  Independent Press
+</p>
 
-      <p className="text-gray-200 text-base sm:text-lg md:text-xl mb-10 leading-relaxed">
-       Growing Pages Publication helps writers turn ideas into impactful books and connects readers with inspiring stories.
-      </p>
+<h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight mb-6">
+  A Home for Remarkable Writing <br /> and Enduring Ideas
+</h1>
 
-      {/* Buttons */}
-      <div className="flex flex-col sm:flex-row gap-5">
+<p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed max-w-lg mb-10">
+  Growing Pages Publication is devoted to shaping thoughtful books and elevating distinctive voices—bringing literature of depth and relevance to readers across India and beyond.
+</p>
 
-        <button className="bg-[#b39b6d] text-white px-7 py-3 rounded-md font-medium transition hover:bg-[#9f8a60]">
-          Explore Books
-        </button>
+<div className="flex flex-col sm:flex-row gap-5">
+  <button className="bg-[#b39b6d] text-white px-7 py-3 rounded-md font-medium hover:bg-[#9f8a60] transition">
+    Browse Collection
+  </button>
 
-        <button className="border border-white text-white px-7 py-3 rounded-md font-medium transition hover:bg-white hover:text-black">
-          Submit Your Manuscript
-        </button>
-
-      </div>
+  <button className="border border-white text-white px-7 py-3 rounded-md font-medium hover:bg-white hover:text-black transition">
+    Submit Manuscript
+  </button>
+</div>
 
     </div>
 
