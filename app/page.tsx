@@ -26,8 +26,8 @@ export default function Home() {
     className="object-cover"
   />
 
-  {/* Warm overlay */}
-  <div className="absolute inset-0 "></div>
+  {/* Editorial Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-transparent"></div>
 
   {/* Navbar */}
   <header className="absolute top-0 left-0 w-full z-20 h-28">
@@ -46,39 +46,14 @@ export default function Home() {
 
       {/* Desktop Navbar */}
       <nav className="hidden md:flex">
-  <ul className="flex gap-10 text-white font-serif text-lg tracking-wide">
-
-    <li>
-      <a href="#" className="hover:text-[#b39b6d] transition">
-        Home
-      </a>
-    </li>
-     <li>
-    <a href="#about" onClick={() => setMenuOpen(false)} className="hover:text-[#b39b6d]">
-      About
-    </a>
-  </li>
-
-    <li>
-      <a href="#books" className="hover:text-[#b39b6d] transition">
-        Books
-      </a>
-    </li>
-
-    <li>
-      <a href="#authors" className="hover:text-[#b39b6d] transition">
-        Authors
-      </a>
-    </li>
-
-    <li>
-      <a href="#contact" className="hover:text-[#b39b6d] transition">
-        Contact
-      </a>
-    </li>
-
-  </ul>
-</nav>
+        <ul className="flex gap-10 text-white font-serif text-lg tracking-wide">
+          <li><a href="#" className="hover:text-[#b39b6d] transition">Home</a></li>
+          <li><a href="#about" className="hover:text-[#b39b6d]">About</a></li>
+          <li><a href="#books" className="hover:text-[#b39b6d] transition">Books</a></li>
+          <li><a href="#authors" className="hover:text-[#b39b6d] transition">Authors</a></li>
+          <li><a href="#contact" className="hover:text-[#b39b6d] transition">Contact</a></li>
+        </ul>
+      </nav>
 
       {/* Mobile Menu Button */}
       <button
@@ -93,102 +68,66 @@ export default function Home() {
     </div>
   </header>
 
+  {/* Mobile Menu */}
+  {menuOpen && (
+    <div className="fixed inset-0 bg-black/95 z-30 flex flex-col items-center justify-center">
 
-{/* Mobile Menu */}
-{menuOpen && (
-  <div className="fixed inset-0 bg-black/95 z-30 flex flex-col items-center justify-center">
+      <button
+        className="absolute top-6 right-6 text-white text-3xl"
+        onClick={() => setMenuOpen(false)}
+      >
+        ✕
+      </button>
 
-    <button
-      className="absolute top-6 right-6 text-white text-3xl"
-      onClick={() => setMenuOpen(false)}
-    >
-      ✕
-    </button>
+      <ul className="text-white text-3xl font-serif space-y-10 text-center">
+        <li><a href="#" onClick={() => setMenuOpen(false)}>Home</a></li>
+        <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
+        <li><a href="#books" onClick={() => setMenuOpen(false)}>Books</a></li>
+        <li><a href="#authors" onClick={() => setMenuOpen(false)}>Authors</a></li>
+        <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li>
+      </ul>
 
-    <ul className="text-white text-3xl font-serif space-y-10 text-center">
-
-      <li>
-        <a
-          href="#"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-[#b39b6d] transition"
-        >
-          Home
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#about"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-[#b39b6d] transition"
-        >
-          About
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#books"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-[#b39b6d] transition"
-        >
-          Books
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#authors"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-[#b39b6d] transition"
-        >
-          Authors
-        </a>
-      </li>
-
-      <li>
-        <a
-          href="#contact"
-          onClick={() => setMenuOpen(false)}
-          className="hover:text-[#b39b6d] transition"
-        >
-          Contact
-        </a>
-      </li>
-
-    </ul>
-
-  </div>
-)}
-
+    </div>
+  )}
 
   {/* Hero Content */}
   <div className="absolute inset-0 flex items-center justify-start px-6 md:px-12 lg:px-20">
 
-    <div className="max-w-xl ml-4 md:ml-16 lg:ml-28">
+    <div className="max-w-2xl ml-4 md:ml-16 lg:ml-28">
 
-      <p className="uppercase tracking-[3px] text-xs text-[#b39b6d] mb-4 font-medium">
-  Independent Press
-</p>
+      {/* Editorial Label */}
+      <p className="uppercase tracking-[4px] text-xs text-[#b39b6d] mb-6">
+        Editorial
+      </p>
 
-<h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-tight mb-6">
-  A Home for Remarkable Writing <br /> and Enduring Ideas
-</h1>
+      {/* Divider */}
+      <div className="w-16 h-[1px] bg-[#b39b6d] mb-6"></div>
 
-<p className="text-gray-200 text-base sm:text-lg md:text-xl leading-relaxed max-w-lg mb-10">
-  Growing Pages Publication is devoted to shaping thoughtful books and elevating distinctive voices—bringing literature of depth and relevance to readers across India and beyond.
-</p>
+      {/* Main Headline */}
+      <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-4">
+        Stories That Shape Perspective
+      </h1>
 
-<div className="flex flex-col sm:flex-row gap-5">
-  <button className="bg-[#b39b6d] text-white px-7 py-3 rounded-md font-medium hover:bg-[#9f8a60] transition">
-    Browse Collection
-  </button>
+      {/* Sub Headline */}
+      <h2 className="font-serif text-gray-300 text-xl md:text-2xl tracking-wide leading-relaxed mb-8">
+        Publishing Thought, Defining Culture
+      </h2>
 
-  <button className="border border-white text-white px-7 py-3 rounded-md font-medium hover:bg-white hover:text-black transition">
-    Submit Manuscript
-  </button>
-</div>
+      {/* Description */}
+      <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg mb-10">
+        Growing Pages Publication curates voices of depth and distinction—bringing meaningful literature to readers across India and beyond.
+      </p>
+
+      {/* CTA */}
+      <div className="flex flex-col sm:flex-row gap-5">
+        <button className="bg-[#b39b6d] text-white px-7 py-3 rounded-md font-medium hover:bg-[#9f8a60] transition">
+          Browse Collection
+        </button>
+
+        <button className="border border-white text-white px-7 py-3 rounded-md font-medium hover:bg-white hover:text-black transition">
+          Submit Manuscript
+        </button>
+      </div>
 
     </div>
 
