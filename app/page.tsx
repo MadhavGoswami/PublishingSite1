@@ -46,7 +46,7 @@ export default function Home() {
 
       {/* Desktop Navbar */}
       <nav className="hidden md:flex">
-        <ul className="flex gap-10 text-white font-serif text-lg tracking-wide">
+        <ul className="flex gap-10 text-white font-serif text-[17px] tracking-[0.04em]">
           <li><a href="#" className="hover:text-[#b39b6d] transition">Home</a></li>
           <li><a href="#about" className="hover:text-[#b39b6d]">About</a></li>
           <li><a href="#books" className="hover:text-[#b39b6d] transition">Books</a></li>
@@ -91,47 +91,51 @@ export default function Home() {
   )}
 
   {/* Hero Content */}
-  <div className="absolute inset-0 flex items-center justify-start px-6 md:px-12 lg:px-20">
+<div className="absolute inset-0 flex items-center justify-start px-6 md:px-12 lg:px-20">
 
-    <div className="max-w-2xl ml-4 md:ml-16 lg:ml-28">
+  <div className="max-w-2xl ml-4 md:ml-16 lg:ml-28">
 
-      {/* Editorial Label */}
-      <p className="uppercase tracking-[4px] text-xs text-[#b39b6d] mb-6">
-        Editorial
-      </p>
+    {/* Editorial Label */}
+    <p className="uppercase tracking-[0.35em] text-[11px] text-[#b39b6d] mb-8 font-medium">
+      Editorial
+    </p>
 
-      {/* Divider */}
-      <div className="w-16 h-[1px] bg-[#b39b6d] mb-6"></div>
+    {/* Divider */}
+    <div className="w-12 h-[1px] bg-[#b39b6d] mb-8"></div>
 
-      {/* Main Headline */}
-      <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl leading-[1.15] tracking-tight mb-4">
-        Stories That Shape Perspective
-      </h1>
+    {/* Main Headline (STRONG + TIGHT) */}
+    <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.02em] max-w-xl">
+      Stories That Shape Perspective
+    </h1>
 
-      {/* Sub Headline */}
-      <h2 className="font-serif text-gray-300 text-xl md:text-2xl tracking-wide leading-relaxed mb-8">
-        Publishing Thought, Defining Culture
-      </h2>
+    {/* Sub Headline (LIGHTER + SPACED) */}
+    <h2 className="font-serif text-gray-300 text-lg md:text-xl tracking-[0.08em] leading-relaxed mt-5 max-w-md">
+      Publishing Thought, Defining Culture
+    </h2>
 
-      {/* Description */}
-      <p className="text-gray-300 text-base sm:text-lg leading-relaxed max-w-lg mb-10">
-        Growing Pages Publication curates voices of depth and distinction—bringing meaningful literature to readers across India and beyond.
-      </p>
+    {/* Description */}
+    <p className="text-gray-300 text-sm md:text-base leading-relaxed max-w-md mt-8">
+  <span className="text-white text-xl font-serif mr-1">G</span>
+  rowing Pages Publication curates voices of depth and distinction—
+  bringing meaningful literature to readers across India and beyond.
+</p>
 
-      {/* CTA */}
-      <div className="flex flex-col sm:flex-row gap-5">
-        <button className="bg-[#b39b6d] text-white px-7 py-3 rounded-md font-medium hover:bg-[#9f8a60] transition">
-          Browse Collection
-        </button>
+    {/* CTA */}
+    <div className="flex flex-col sm:flex-row gap-5 mt-10">
 
-        <button className="border border-white text-white px-7 py-3 rounded-md font-medium hover:bg-white hover:text-black transition">
-          Submit Manuscript
-        </button>
-      </div>
+      <button className="bg-[#b39b6d] text-white px-7 py-3 text-sm tracking-wide rounded-md font-medium hover:bg-[#9f8a60] transition shadow-lg">
+        Browse Collection
+      </button>
+
+      <button className="border border-white/80 text-white px-7 py-3 text-sm tracking-wide rounded-md font-medium hover:bg-white hover:text-black transition">
+        Submit Manuscript
+      </button>
 
     </div>
 
   </div>
+
+</div>
 
 </section>
 {/* ABOUT PUBLISHER SECTION */}
